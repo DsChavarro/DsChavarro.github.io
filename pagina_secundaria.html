@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Secundaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            box-sizing: border-box;
+        }
+
+        /* Contenedor para todo el contenido */
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Título centrado en la parte superior */
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #fff; /* Texto blanco */
+            text-align: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        h1:hover {
+            color: #007BFF; /* Cambia el color al pasar el cursor */
+        }
+
+        /* Contenedor para los bloques */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .left, .right {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .paragraph-block {
+            padding: 20px;
+            background-color: #222; /* Fondo gris oscuro */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+            opacity: 1;
+            color: #fff; /* Texto blanco */
+        }
+
+        .paragraph-block h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #007BFF;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .paragraph-block h2:hover {
+            color: #0056b3;
+        }
+
+        /* Mostrar el contenido del párrafo e imágenes al pasar el cursor sobre el bloque */
+        .paragraph-block p, .paragraph-block .image-block, .paragraph-block .single-image, .paragraph-block .link-images {
+            display: none;
+        }
+
+        .paragraph-block:hover p, .paragraph-block:hover .image-block, .paragraph-block:hover .single-image, .paragraph-block:hover .link-images {
+            display: block;
+        }
+
+        /* Estilos para imágenes en el primer bloque */
+        .image-block {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .image-block img, .single-image img, .link-images img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Estilos para imágenes con enlaces en el bloque 4 */
+        .link-images {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .link-images img {
+            width: 30%;
+            cursor: pointer;
+        }
+
+        /* Estilos para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            .left, .right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Contenedor principal -->
+<div class="main-container">
+    <!-- Título centrado arriba -->
+    <h1 id="title">Perfil del Sujeto</h1>
+
+    <!-- Contenedor de los bloques -->
+    <div class="container" id="content-container">
+        <!-- Lado izquierdo -->
+        <div class="left">
+            <!-- Primer bloque: Habilidades -->
+            <div class="paragraph-block" id="block-habilidades">
+                <h2>Habilidades</h2>
+                <p>Tiene dos roles donde se destaca que es la jg y en la top puede jugar variedad de campeones cuando el quiere te carrea pero pues si troleas te dira que es una mierda de jugador como siempre se lo recuerda a Sergio. 
+                    Los campeones con que mas se destaca y tiene mas maestria son Sett, Olaf e Irelia</p>
+                
+                <!-- Bloque de imágenes en columna -->
+                <div class="image-block">
+                    <img src="Captura de pantalla 2024-11-14 212544.png" alt="Imagen 1">
+                    <img src="Captura de pantalla 2024-11-14 212550.png" alt="Imagen 2">
+                    <img src="Captura de pantalla 2024-11-14 212554.png" alt="Imagen 3">
+                </div>
+            </div>
+
+            <!-- Segundo bloque: Perfil -->
+            <div class="paragraph-block" id="block-perfil">
+                <h2>Perfil</h2>
+                <p>Santiago a pisado varias veces esmeralda pero esta season llego a diamante por primera vez en su historia con pocas partidas y teniendo un 60% de winrate y su proximo objetivo sera master cuando termine la season.</p>
+                <!-- Imagen individual en el segundo bloque -->
+                <div class="single-image">
+                    <img src="Captura de pantalla 2024-11-14 154125.png" alt="Foto de perfil">
+                </div>
+            </div>
+        </div>
+
+        <!-- Lado derecho -->
+        <div class="right">
+            <!-- Tercer bloque: Sobre él -->
+            <div class="paragraph-block" id="block-sobre">
+                <h2>Sobre él</h2>
+                <p>El desgraciado llamado Santido que tiene como apodo Zandar tiene 19 años, va comenzar sus estudios y en su tiempo libre se la pasa jugando a su juego favorito que es el lol JAJAJA, Aun no tengo fotos del desgraciado pero cuando tenga la subiré aquí.
+                    (INSERTE FOTO)</p>
+            </div>
+
+            <!-- Cuarto bloque: Cómo se puede comunicar con él -->
+            <div class="paragraph-block" id="block-comunicacion">
+                <h2>Cómo se puede comunicar con él</h2>
+                <p>Te puedes comunicar con el con las diferentes redes sociales que utliza el te puede responder cuando sea asi que no tienes problema para comunixarte con el.</p>
+                
+                <!-- Imágenes con enlaces -->
+                <div class="link-images">
+                    <a href="https://www.facebook.com/alvarez.cuellarsantiago" target="_blank"><img src="OIP.jpeg" alt="Enlace 1"></a>
+                    <a href="https://www.instagram.com/mikye2004?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="OIP (1).jpeg" alt="Enlace 2"></a>
+                    <a href="https://wa.me/+573204243713" target="_blank"><img src="OIP (2).jpeg" alt="Enlace 3"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Obtener el título y el contenedor de los bloques
+    const title = document.getElementById('title');
+    const contentContainer = document.getElementById('content-container');
+
+    // Variable para asegurarnos de que solo se muestra una vez
+    let isDisplayed = false;
+
+    // Agregar evento para mostrar el contenido al pasar el cursor sobre el título
+    title.addEventListener('mouseenter', () => {
+        if (!isDisplayed) {
+            contentContainer.style.opacity = 1;  // Mostrar los bloques con una transición
+            isDisplayed = true;  // Marcar como mostrado
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal con Video de Fondo</title>
+    <style>
+        /* Ajustes para que el video cubra todo el fondo */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: #fff; /* Color del texto en blanco para visibilidad */
+            overflow: hidden;
+        }
+        /* Video de fondo */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Colocar el video detrás del contenido */
+        }
+        .title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            z-index: 1; /* Colocar el título por encima del video */
+        }
+        .image-container {
+            cursor: pointer;
+            transition: transform 0.3s;
+            z-index: 1; /* Colocar la imagen por encima del video */
+        }
+        .image-container:hover {
+            transform: scale(1.1); /* Animación al pasar el cursor */
+        }
+        img {
+            width: 300px; /* Limitar el ancho a 300 píxeles */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Video de fondo -->
+<video autoplay muted loop id="background-video">
+    <source src="videoplayback.mp4" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+</video>
+
+<!-- Contenido centrado -->
+<h1 class="title">Tratándole de conseguir novia a mi amigo lolero</h1>
+
+<div class="image-container" onclick="openSecondaryPage()">
+    <img src="Foto1.jpg" alt="Imagen Inicial">
+</div>
+
+<script>
+    function openSecondaryPage() {
+        // Abrir la página secundaria en la misma pestaña
+        window.location.href = 'pagina_secundaria.html';
+    }
+</script>
+
+</body>
+</html>
